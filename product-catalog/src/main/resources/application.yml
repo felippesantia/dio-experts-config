@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: product-catalog
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+
+  server:
+    port:
+      8081
+
+  eureka:
+    instance:
+      hostname: localhost
+      port: 9000
+    client:
+      registerWithEureka: true
+      fetchRegistry: false
+      serviceUrl:
+        defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      server:
+        wait-time-in-ms-when-sync-empty: 3000
